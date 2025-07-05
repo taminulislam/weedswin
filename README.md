@@ -1,7 +1,5 @@
-
 <div align="center">
-<h1>WeedSwin </h1>
-<h3>WeedSwin Transformer with SAM-2: A Multi-Stage Weed Detection and Classification Framework</h3>
+<h1>WeedSwin hierarchical vision transformer with SAM-2 for multi-stage weed detection and classification</h1>
 
 [Taminul Islam](https://scholar.google.com/citations?user=Kgo_S9sAAAAJ&hl=en&oi=ao)<sup>1</sup>, [Toqi Tahamid Sarker](https://scholar.google.com/citations?hl=en&pli=1&user=i1SmuwYAAAAJ)<sup>1</sup>,[Khaled R Ahmed](https://scholar.google.com/citations?user=FYKqgh4AAAAJ&hl=en)<sup>1</sup>, [Cristiana Bernardi Rankrape]()<sup>2</sup> [Karla Gage](https://scholar.google.com/citations?user=6IqTa8AAAAAJ&hl=en)<sup>3</sup>,
 
@@ -13,6 +11,13 @@ Southern Illinois University Carbondale
 
 </div>
 
+<div align="center">
+
+[![Paper](https://img.shields.io/badge/Paper-Scientific%20Reports-red?style=for-the-badge&logo=springer&logoColor=white)](https://doi.org/10.1038/s41598-025-05092-z)
+[![Dataset](https://img.shields.io/badge/Dataset-Zenodo-blue?style=for-the-badge&logo=zenodo&logoColor=white)](https://doi.org/10.5281/zenodo.15808623)
+
+</div>
+
 - [Abstract](#abstract)
 - [Getting Started](#getting-started)
   - [WeedSwin Installation](#weedswin-installation)
@@ -21,8 +26,7 @@ Southern Illinois University Carbondale
 <!-- - [Acknowledgment](#acknowledgment) -->
 
 ## Abstract
-Weed detection and classification using computer vision and deep learning techniques have emerged as crucial tools for precision agriculture, offering automated solutions for sustainable farming practices. This study presents a comprehensive approach to weed identification across multiple growth stages, addressing the challenges of detecting and classifying diverse weed species throughout their developmental cycles. We introduce two extensive datasets: the Alpha Weed Dataset (AWD) with 203,567 images and the Beta Weed Dataset (BWD) with 120,341 images, collectively documenting 16 prevalent weed species across 11 growth stages. The datasets were preprocessed using both traditional computer vision techniques and the advanced SAM-2 model, ensuring high-quality annotations with precise bounding boxes and segmentation masks. Our research evaluates several state-of-the-art object detection architectures, including DINO Transformer (with ResNet-101 and Swin backbones), Detection Transformer (DETR), EfficientNet B4, and RetinaNet. Additionally, we propose a novel WeedSwin Transformer architecture specifically designed to address the unique challenges of weed detection, such as complex morphological variations and overlapping vegetation patterns. Through rigorous experimentation, WeedSwin demonstrated superior performance, achieving 0.993 mAP and 0.985 mAR while maintaining practical processing speeds of 218.27 FPS, outperforming existing architectures across various metrics.
-The comprehensive evaluation across different growth stages reveals the robustness of our approach, particularly in detecting challenging "driver weeds" that significantly impact agricultural productivity. By providing accurate, automated weed identification capabilities, this research establishes a foundation for more efficient and environmentally sustainable weed management practices. The demonstrated success of the WeedSwin architecture, combined with our extensive temporal datasets, represents a significant advancement in agricultural computer vision, supporting the evolution of precision farming techniques while promoting reduced herbicide usage and improved crop management efficiency.
+Weed detection and classification using computer vision and deep learning techniques have emerged as crucial tools for precision agriculture, offering automated solutions for sustainable farming practices. This study presents a comprehensive approach to weed identification across multiple growth stages, addressing the challenges of detecting and classifying diverse weed species throughout their developmental cycles. We introduce two extensive datasets: the Alpha Weed Dataset (AWD) with 203,567 images and the Beta Weed Dataset (BWD) with 120,341 images, collectively documenting 16 prevalent weed species across 11 growth stages. The datasets were preprocessed using both traditional computer vision techniques and the advanced SAM-2 model, ensuring high-quality annotations with segmentation masks and precise bounding boxes. Our research evaluates several state-of-the-art object detection architectures, including DINO Transformer (with ResNet-101 and Swin backbones), Detection Transformer (DETR), EfficientNet B4, YOLO v8, and RetinaNet. Additionally, we propose a novel WeedSwin Transformer architecture specifically designed to address the unique challenges of weed detection, such as complex morphological variations and overlapping vegetation patterns. Through rigorous experimentation, WeedSwin demonstrated superior performance, achieving 0.993 ± 0.004 mAP and 0.985 mAR while maintaining practical processing speeds of 218.27 FPS, outperforming existing architectures across various metrics. The comprehensive evaluation across different growth stages reveals the robustness of our approach, particularly in detecting challenging "driver weeds" that significantly impact agricultural productivity. By providing accurate, automated weed identification capabilities, this research establishes a foundation for more efficient and environmentally sustainable weed management practices. The demonstrated success of the WeedSwin architecture, combined with our extensive temporal datasets, represents a significant advancement in agricultural computer vision, supporting the evolution of precision farming techniques while promoting reduced herbicide usage and improved crop management efficiency.
 
 <p align="center">
   <div style="position: relative; display: inline-block;">
