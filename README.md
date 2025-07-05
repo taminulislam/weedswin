@@ -87,6 +87,29 @@ WeedSwin is based on MMDetection 3.0.0, so we need to check the versions of PyTo
 python -c "import torch, mmcv, mmdet; print(torch.__version__, mmcv.__version__, mmdet.__version__)"
 ```
 
+## Dataset
+
+The Weed Growth Stage Dataset used in this research is publicly available on Zenodo:
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15808623.svg)](https://doi.org/10.5281/zenodo.15808623)
+
+Dataset: [https://doi.org/10.5281/zenodo.15808623](https://doi.org/10.5281/zenodo.15808623)
+
+## Citation
+
+```
+@article{islam2025weedswin,
+  title={WeedSwin hierarchical vision transformer with SAM-2 for multi-stage weed detection and classification},
+  author={Islam, Taminul and Sarker, Toqi Tahamid and Ahmed, Khaled R and Rankrape, Cristiana Bernardi and Gage, Karla},
+  journal={Scientific Reports},
+  volume={15},
+  number={1},
+  pages={23274},
+  year={2025},
+  publisher={Nature Publishing Group UK London}
+}
+```
+
 <!-- ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=toqitahamid/Gasformer&type=Date)](https://star-history.com/#toqitahamid/Gasformer&Date) -->
