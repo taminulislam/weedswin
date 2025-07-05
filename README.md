@@ -101,7 +101,9 @@ Dataset: [https://doi.org/10.5281/zenodo.15808623](https://doi.org/10.5281/zenod
 
 ## Citation
 
-```
+If you use WeedSwin in your research, please cite our paper:
+
+```bibtex
 @article{islam2025weedswin,
   title={WeedSwin hierarchical vision transformer with SAM-2 for multi-stage weed detection and classification},
   author={Islam, Taminul and Sarker, Toqi Tahamid and Ahmed, Khaled R and Rankrape, Cristiana Bernardi and Gage, Karla},
