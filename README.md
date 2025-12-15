@@ -42,8 +42,6 @@ Weed detection and classification using computer vision and deep learning techni
 
 **Step 1: Clone the WeedSwin repository:**
 
-To get started, first clone the WeedSwin repository and navigate to the project directory:
-
 ```bash
 git clone https://github.com/taminulislam/weeds.git
 cd weeds
@@ -51,45 +49,100 @@ cd weeds
 
 **Step 2: Environment Setup:**
 
-WeedSwin recommends setting up a conda environment and installing dependencies via pip or conda. Use the following commands to set up your environment:
-
-***Create and activate a new conda environment***
+Create and activate a new conda environment:
 
 ```bash
 conda create -n weedswin python=3.8
 conda activate weedswin
 ```
 
-***Install PyTorch and CUDA***
+Install PyTorch and CUDA:
 
 ```bash
 conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
 ```
 
-***Install MMSegmentation dependencies***
+Install MMDetection and dependencies:
 
 ```bash
 pip install -U openmim
 mim install mmengine
 mim install "mmcv>=2.0.0"
+mim install "mmdet>=3.0.0"
 ```
 
-***Install additional packages***
+Install additional packages:
 
 ```bash
-conda install conda-forge::ftfy
-conda install conda-forge::tensorboard
-pip install wandb
-conda install anaconda::ipykernel
+pip install -r requirements.txt
 ```
 
-***Verification***
-
-WeedSwin is based on MMDetection 3.0.0, so we need to check the versions of PyTorch, MMCV and MMDetection.
+**Step 3: Verify Installation:**
 
 ```bash
 python -c "import torch, mmcv, mmdet; print(torch.__version__, mmcv.__version__, mmdet.__version__)"
 ```
+
+### Training WeedSwin
+
+Train the model using the provided configuration:
+
+```bash
+python train_weedswin.py
+```
+
+Or use MMDetection's training script:
+
+```bash
+python tools/train.py configs/weedswin.py
+```
+
+### Testing WeedSwin
+
+Test the trained model:
+
+```bash
+python test_weedswin.py --checkpoint work_dirs/weedswin/epoch_12.pth
+```
+
+Or use MMDetection's testing script:
+
+```bash
+python tools/test.py configs/weedswin.py work_dirs/weedswin/epoch_12.pth
+```
+
+### Model Architecture
+
+WeedSwin combines:
+- **Swin Transformer backbone** (depths=[2, 2, 18, 4], embed_dims=192)
+- **DINO detection head** with 4-scale features
+- **174 weed classes** covering 16 species across 11 growth stages
+
+Key features:
+- Multi-scale feature extraction with hierarchical architecture
+- Deformable attention for efficient processing
+- Optimized for 218.27 FPS inference speed
+- Achieves 0.993 ± 0.004 mAP
+
+### Dataset Format
+
+WeedSwin uses COCO format for annotations. Organize your dataset as follows:
+
+```
+data/
+├── annotations/
+│   ├── train.json
+│   ├── val.json
+│   └── test.json
+├── train/
+│   └── *.jpg
+├── val/
+│   └── *.jpg
+└── test/
+    └── *.jpg
+```
+
+Update the `data_root` path in [configs/weedswin.py](configs/weedswin.py) to point to your dataset location.
 
 ## Dataset
 
@@ -98,6 +151,11 @@ The Weed Growth Stage Dataset used in this research is publicly available on Zen
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.15808623.svg)](https://doi.org/10.5281/zenodo.15808623)
 
 Dataset: [https://doi.org/10.5281/zenodo.15808623](https://doi.org/10.5281/zenodo.15808623)
+
+## Additional Documentation
+
+- [QUICKSTART.md](QUICKSTART.md) - Quick reference guide for training and testing
+- [STRUCTURE.md](STRUCTURE.md) - Repository structure and file organization
 
 ## Citation
 

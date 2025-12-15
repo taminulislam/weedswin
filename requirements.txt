@@ -1,0 +1,18 @@
+# WeedSwin Requirements
+# Python 3.8 or higher required
+
+# Core dependencies
+torch>=2.0.0
+torchvision>=0.15.0
+mmengine>=0.7.0
+mmcv>=2.0.0
+mmdet>=3.0.0
+
+# Training utilities
+tensorboard
+wandb
+
+# Additional utilities
+openmim
+ftfy
+albumentations
